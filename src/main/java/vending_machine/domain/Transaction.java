@@ -17,12 +17,15 @@ public class Transaction {
     private Long id;
     private Product product;
     private int amountPaid;
+
+    private int productPrice;
     private List<Coin> coins;
     private List<BankNote> notes;
 
-    public Transaction(Product product, int amountPaid, List<Coin> coins, List<BankNote> notes) {
+    public Transaction(Product product, int amountPaid, int productPrice, List<Coin> coins, List<BankNote> notes) {
         this.product = product;
         this.amountPaid = amountPaid;
+        this.productPrice = productPrice;
         this.coins = coins;
         this.notes = notes;
     }

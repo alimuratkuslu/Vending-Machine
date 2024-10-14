@@ -93,7 +93,7 @@ function App() {
       {}
       <div>
         <h2>Total Money Stored</h2>
-        <p>{(totalMoney / 100).toFixed(4)} USD</p>
+        <p>{(totalMoney).toFixed(4)} USD</p>
       </div>
     </div>
   );

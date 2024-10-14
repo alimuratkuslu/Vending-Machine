@@ -24,6 +24,6 @@ public class PostgresTransactionAdapter implements TransactionPort {
         return transactionRepository.findAll()
                 .stream()
                 .map(TransactionEntity::toDomain)
-                .mapToInt(Transaction::getAmountPaid).sum();
+                .mapToInt(Transaction::getProductPrice).sum();
     }
 }

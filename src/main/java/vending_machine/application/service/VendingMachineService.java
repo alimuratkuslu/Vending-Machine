@@ -36,7 +36,7 @@ public class VendingMachineService implements VendingMachineUseCase {
 
         Change changeDetails = calculateChange(change);
 
-        Transaction transaction = new Transaction(product, payment, changeDetails.getCoins(), changeDetails.getNotes());
+        Transaction transaction = new Transaction(product, payment, product.getPrice(), changeDetails.getCoins(), changeDetails.getNotes());
         transactionPort.saveTransaction(transaction);
         return transaction;
     }

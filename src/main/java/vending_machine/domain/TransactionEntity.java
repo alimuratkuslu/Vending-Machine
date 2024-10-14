@@ -22,6 +22,7 @@ public class TransactionEntity {
     @JoinColumn(name = "product_id", nullable = false)
     private Product product;
     private int amountPaid;
+    private int productPrice;
     private List<Coin> coins;
     private List<BankNote> notes;
 
@@ -30,6 +31,7 @@ public class TransactionEntity {
                 transaction.getId(),
                 transaction.getProduct(),
                 transaction.getAmountPaid(),
+                transaction.getProductPrice(),
                 transaction.getCoins(),
                 transaction.getNotes());
     }
@@ -39,6 +41,7 @@ public class TransactionEntity {
                 this.id,
                 this.product,
                 this.amountPaid,
+                this.productPrice,
                 this.getCoins(),
                 this.getNotes());
     }
