@@ -2,7 +2,6 @@ package vending_machine.application.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import vending_machine.adapter.out.persistence.TransactionRepository;
 import vending_machine.application.port.in.VendingMachineUseCase;
 import vending_machine.application.port.out.ProductPort;
 import vending_machine.application.port.out.TransactionPort;
