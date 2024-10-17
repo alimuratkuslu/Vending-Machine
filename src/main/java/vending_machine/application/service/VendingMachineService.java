@@ -20,7 +20,7 @@ public class VendingMachineService implements VendingMachineUseCase {
     private final TransactionPort transactionPort;
 
     @Override
-    public Transaction purchaseProduct(String productName, int payment) {
+    public synchronized Transaction purchaseProduct(String productName, int payment) {
         Product product = productPort.loadProductByName(productName);
         if (product == null || product.getQuantity() <= 0) {
             throw new ProductNotAvailableException();
@@ -41,7 +41,7 @@ public class VendingMachineService implements VendingMachineUseCase {
     }
 
     @Override
-    public void restockProduct(Long productId, int quantity) {
+    public synchronized void restockProduct(Long productId, int quantity) {
         Product product = productPort.loadProductById(productId);
         productPort.updateProductQuantity(product, quantity);
     }
@@ -52,7 +52,7 @@ public class VendingMachineService implements VendingMachineUseCase {
     }
 
     @Override
-    public void saveProduct(Product product) {
+    public synchronized void saveProduct(Product product) {
         productPort.saveProduct(product);
     }
 
